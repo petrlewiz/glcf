@@ -1,0 +1,93 @@
+/* Gospel Lighthouse Christian Fellowship — custom layer on Bootstrap 5.3 */
+:root {
+  --glc-navy: #14213d;
+  --glc-navy-deep: #0c1529;
+  --glc-gold: #f2b134;
+  --glc-gold-dark: #d99a1c;
+  --glc-paper: #fbf8f1;
+
+  --bs-body-font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bs-body-color: #26304a;
+  --bs-body-bg: #ffffff;
+  --bs-body-line-height: 1.65;
+  --bs-link-color: var(--glc-navy);
+  --bs-link-hover-color: var(--glc-gold-dark);
+  --bs-border-radius-lg: 1rem;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand, .display-3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  color: inherit;
+  letter-spacing: -0.01em;
+}
+h2, h3, h4 { color: var(--glc-navy); }
+.text-white h2, .text-white h3, .section-navy h2, .section-navy h3, .glc-footer h2, .glc-footer h3 { color: #fff; }
+.section-navy h3.text-gold, .text-gold { color: var(--glc-gold) !important; }
+
+/* Buttons */
+.btn { border-radius: 999px; font-weight: 600; padding-inline: 1.5rem; }
+.btn-gold { --bs-btn-color: var(--glc-navy-deep); --bs-btn-bg: var(--glc-gold); --bs-btn-border-color: var(--glc-gold);
+  --bs-btn-hover-color: var(--glc-navy-deep); --bs-btn-hover-bg: var(--glc-gold-dark); --bs-btn-hover-border-color: var(--glc-gold-dark);
+  --bs-btn-active-bg: var(--glc-gold-dark); --bs-btn-active-border-color: var(--glc-gold-dark); }
+.btn-navy { --bs-btn-color: #fff; --bs-btn-bg: var(--glc-navy); --bs-btn-border-color: var(--glc-navy);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: var(--glc-navy-deep); --bs-btn-hover-border-color: var(--glc-navy-deep); }
+.btn-outline-navy { --bs-btn-color: var(--glc-navy); --bs-btn-border-color: var(--glc-navy);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: var(--glc-navy); --bs-btn-hover-border-color: var(--glc-navy); }
+.btn:focus-visible, .nav-link:focus-visible, a:focus-visible { outline: 3px solid var(--glc-gold); outline-offset: 2px; }
+
+/* Navbar */
+.glc-nav { background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(20,33,61,.08); }
+.glc-nav .nav-link { color: var(--glc-navy); font-weight: 500; padding-inline: 1rem; }
+.glc-nav .nav-link:hover, .glc-nav .nav-link.active { color: var(--glc-gold-dark); }
+.glc-mega { min-width: 22rem; border: 0; border-radius: 1rem; box-shadow: 0 1rem 2.5rem rgba(20,33,61,.15); }
+@media (min-width: 992px) { .glc-nav .dropdown:hover > .dropdown-menu { display: block; } }
+
+/* Hero — a beam of light from the upper right */
+.hero {
+  position: relative;
+  padding: 6rem 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 0%, rgba(242,177,52,.35), transparent 65%),
+    linear-gradient(160deg, var(--glc-navy) 0%, var(--glc-navy-deep) 100%);
+  overflow: hidden;
+}
+.hero h1 { color: #fff; }
+.hero-place { font-family: "Fraunces", serif; font-size: 1.75rem; color: var(--glc-gold); }
+.hero-logo img { max-height: 22rem; width: auto; }
+@media (max-width: 991.98px) { .hero { padding: 4rem 0; } .hero-logo img { max-height: 14rem; } }
+
+/* Sections */
+.section { padding: 5rem 0; }
+.section-tint { background: var(--glc-paper); }
+.section-navy { background: var(--glc-navy); }
+.panel { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 1.25rem; padding: 2.5rem; }
+.glow-icon { font-size: 2.5rem; color: var(--glc-gold); display: block; margin-bottom: .5rem; }
+
+/* Photos */
+.photo { background: linear-gradient(135deg, var(--glc-gold), var(--glc-navy)); overflow: hidden; }
+.photo img { object-fit: cover; width: 100%; height: 100%; }
+.panel-photo { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.panel-photo .panel-body { padding: 2rem 2.5rem 2.5rem; }
+.photo-lg { border-radius: 1.5rem; box-shadow: 0 1rem 2.5rem rgba(20,33,61,.18); }
+
+/* Sermon cards */
+.sermon-card { border: 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 .25rem 1rem rgba(20,33,61,.08); transition: transform .2s, box-shadow .2s; }
+.sermon-card:hover { transform: translateY(-3px); box-shadow: 0 .75rem 1.5rem rgba(20,33,61,.15); }
+.sermon-card img { aspect-ratio: 16/10; object-fit: cover; }
+.sermon-card a { text-decoration: none; }
+
+/* Give modal */
+.give-option { background: var(--glc-paper); border-radius: 1rem; padding: 1.25rem; }
+
+/* Footer */
+.glc-footer { background: var(--glc-navy-deep); }
+.footer-links, .footer-links a { color: rgba(255,255,255,.75); text-decoration: none; font-style: normal; }
+.footer-links li { margin-bottom: .35rem; }
+.footer-links a:hover { color: var(--glc-gold); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.featured-sermons { border-top: 1px solid rgba(20,33,61,.15); }
+.section-navy .sermon-card { box-shadow: none; }
+.section-navy .sermon-card { --bs-card-color: var(--bs-body-color); }
