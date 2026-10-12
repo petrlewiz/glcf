@@ -8,7 +8,8 @@ output_dir = Path("docs")
 output_dir.mkdir(exist_ok=True)
 
 pages = [
-    "index.html"
+    "index.html",
+    "about.html"
 ]
 
 for page in pages:

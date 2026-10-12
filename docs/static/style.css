@@ -99,3 +99,13 @@ h2, h3, h4 { color: var(--glc-navy); }
 .featured-sermons { border-top: 1px solid rgba(20,33,61,.15); }
 .section-navy .sermon-card { box-shadow: none; }
 .section-navy .sermon-card { --bs-card-color: var(--bs-body-color); }
+
+/* About page */
+.milestone { border-left: 4px solid var(--glc-gold); padding-left: 1.25rem; }
+.leader-card { border: 0; border-radius: 1rem; box-shadow: 0 .25rem 1rem rgba(20,33,61,.08); }
+.leader-avatar { width: 5rem; height: 5rem; border-radius: 50%; background: var(--glc-navy); color: var(--glc-gold);
+  display: grid; place-items: center; font-family: "Bebas Neue", sans-serif; font-size: 2rem; letter-spacing: .05em; }
+.leader-lead .leader-avatar { width: 6.5rem; height: 6.5rem; font-size: 2.5rem; background: var(--glc-gold); color: var(--glc-navy-deep); }
+.accordion { --bs-accordion-active-bg: var(--glc-paper); --bs-accordion-active-color: var(--glc-navy);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(242,177,52,.4); }
+.accordion-button { font-weight: 500; font-size: 1.25rem;}
