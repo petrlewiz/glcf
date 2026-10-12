@@ -15,12 +15,20 @@
   --bs-border-radius-lg: 1rem;
 }
 
-h1, h2, h3, h4, h5, .navbar-brand, .display-3 {
+/* h1, h2, h3, h4, h5, .navbar-brand, .display-3 {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 700;
   color: inherit;
   letter-spacing: -0.01em;
+} */
+
+h1, h2, h3, h4, h5, .navbar-brand, .display-3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: inherit;
+  /* letter-spacing: -0.01em; */
 }
+
 h2, h3, h4 { color: var(--glc-navy); }
 .text-white h2, .text-white h3, .section-navy h2, .section-navy h3, .glc-footer h2, .glc-footer h3 { color: #fff; }
 .section-navy h3.text-gold, .text-gold { color: var(--glc-gold) !important; }
