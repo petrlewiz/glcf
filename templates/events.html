@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% set active_page = "events" %}
+
+{% block title %}Events – Gospel Lighthouse Christian Fellowship Ajax{% endblock %}
+
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<header class="hero text-white">
+  <div class="container position-relative">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/" class="text-white-50">Home</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Events</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="display-3 mb-3">Events</h1>
+        <p class="lead mb-0">Join us for worship, Bible study, and fellowship throughout the week.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SUNDAY SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 mb-3">Sundays</h2>
+        <p class="lead mb-0">Come worship with us and grow in faith together.</p>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <article class="card leader-card h-100">
+          <div class="card-body p-4">
+            <i class="bi bi-book glow-icon" aria-hidden="true"></i>
+            <h3 class="h3 mb-2">Sunday Bible Class</h3>
+            <p class="mb-0">10:15 am – 10:50 am</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="card leader-card h-100">
+          <div class="card-body p-4">
+            <i class="bi bi-brightness-high glow-icon" aria-hidden="true"></i>
+            <h3 class="h3 mb-2">Sunday Morning Service</h3>
+            <p class="mb-0">11:00 am</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="card leader-card h-100">
+          <div class="card-body p-4">
+            <i class="bi bi-moon-stars glow-icon" aria-hidden="true"></i>
+            <h3 class="h3 mb-2">Sunday Evening Service</h3>
+            <p class="mb-1">7:00 pm</p>
+            <p class="text-body-secondary small mb-0">2nd, 3rd, and 4th Sunday</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY MEETINGS -->
+<section class="section section-navy text-white">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 mb-3">Ministry meetings</h2>
+        <p class="lead mb-0">Connect with others in your ministry group.</p>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="panel h-100">
+          <h3 class="h3 text-gold mb-3">Women’s Meeting</h3>
+          <p class="mb-0">Thursdays at 7:00 pm<br><span class="text-white-50">Online via Callbridge</span></p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="panel h-100">
+          <h3 class="h3 text-gold mb-3">Men’s Meeting</h3>
+          <p class="mb-0">Saturday at 9:30 am<br><span class="text-white-50">Every 4th Saturday</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="/ministry-groups/" class="btn btn-gold btn-lg">View ministry groups</a>
+    </div>
+  </div>
+</section>
+
+<!-- STAY CONNECTED -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 mb-3">Stay connected</h2>
+        <p class="lead">Come join us and discover a place where you can belong, grow in your faith, and be part of something bigger.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a href="/contact-us/" class="btn btn-gold btn-lg">Plan your visit</a>
+          <a href="/about-us/" class="btn btn-outline-navy btn-lg">About us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
