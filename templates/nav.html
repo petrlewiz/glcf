@@ -31,7 +31,11 @@
             <a class="dropdown-item px-0" href="/sermon/welcome-to-the-family-of-god/">Confidence In GOD</a>
           </div>
         </li> -->
-        <li class="nav-item"><a class="nav-link" href="/ministry-groups/">Ministry Groups</a></li>
+
+        <li class="nav-item"><a class="nav-link {{'active' if active_page == 'ministry-groups' }}"
+          aria-current="{{ 'page' if active_page == 'ministry-groups' }}"
+          href="ministry-groups.html">Ministry Groups</a>
+        </li>
         <li class="nav-item"><a class="nav-link" href="/events-2/">Events</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact-us/">Contact Us</a></li>
       </ul>

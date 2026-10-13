@@ -10,7 +10,8 @@ output_dir.mkdir(exist_ok=True)
 pages = [
     "index.html",
     "about.html",
-    "listen.html"
+    "listen.html",
+    "ministry-groups.html"
 ]
 
 for page in pages:
