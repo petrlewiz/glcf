@@ -40,7 +40,10 @@
           aria-current="{{ 'page' if active_page == 'events' }}"
           href="events.html">Events</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="/contact-us/">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link {{'active' if active_page == 'contact' }}"
+          aria-current="{{ 'page' if active_page == 'contact' }}"
+          href="contact.html">Contact</a>
+        </li>
       </ul>
       <button class="btn btn-gold" type="button" data-bs-toggle="modal" data-bs-target="#giveModal">Give</button>
     </div>

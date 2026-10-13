@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% set active_page = "contact" %}
+
+{% block title %}Contact Us – Gospel Lighthouse Christian Fellowship Ajax{% endblock %}
+
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<header class="hero text-white">
+  <div class="container position-relative">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/" class="text-white-50">Home</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="display-3 mb-3">Contact Us</h1>
+        <p class="lead mb-0">We’d love to hear from you. Plan a visit, ask a question, or send us a prayer request.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTACT INFORMATION -->
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-lg-6">
+        <h2 class="h1 mb-4">Contact information</h2>
+
+        <ul class="list-unstyled mb-5">
+          <li class="d-flex gap-3 mb-3">
+            <i class="bi bi-telephone fs-4 text-gold" aria-hidden="true"></i>
+            <div>
+              <strong>Phone</strong><br>
+              <a href="tel:+14164661411">416.466.1411</a>
+            </div>
+          </li>
+          <li class="d-flex gap-3 mb-3">
+            <i class="bi bi-envelope fs-4 text-gold" aria-hidden="true"></i>
+            <div>
+              <strong>Email</strong><br>
+              <a href="mailto:lighthouse.ajax@gmail.com">lighthouse.ajax@gmail.com</a>
+            </div>
+          </li>
+          <li class="d-flex gap-3 mb-3">
+            <i class="bi bi-globe fs-4 text-gold" aria-hidden="true"></i>
+            <div>
+              <strong>Website</strong><br>
+              <a href="https://glcfellowship.ca">glcfellowship.ca</a>
+            </div>
+          </li>
+          <li class="d-flex gap-3">
+            <i class="bi bi-geo-alt fs-4 text-gold" aria-hidden="true"></i>
+            <div>
+              <strong>Address</strong><br>
+              <address class="mb-0">625 Kingston Road West, Ajax ON L1S 6L8</address>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="h2 mb-3">Service schedule</h3>
+        <div class="milestone mb-3">
+          <strong>Sunday Bible Class</strong><br>
+          10:15 am – 10:50 am
+        </div>
+        <div class="milestone mb-3">
+          <strong>Sunday Morning Service</strong><br>
+          11:00 am
+        </div>
+        <div class="milestone">
+          <strong>Sunday Evening Service</strong><br>
+          7:00 pm<br>
+          <span class="text-body-secondary small">2nd, 3rd, and 4th Sunday</span>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="photo photo-lg ratio ratio-4x3">
+          <iframe
+            src="https://maps.google.com/maps?q=625%20Kingston%20Road%20West%2C%20Ajax%20ON%20L1S%206L8&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=near"
+            title="Map showing Gospel Lighthouse Christian Fellowship at 625 Kingston Road West, Ajax"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <a href="https://maps.google.com/?q=625%20Kingston%20Road%20West%2C%20Ajax%20ON%20L1S%206L8" class="btn btn-outline-navy mt-4" target="_blank" rel="noopener">Get directions</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STAY CONNECTED -->
+<section class="section section-navy text-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 mb-3">Stay connected</h2>
+        <p class="lead">Come join us and discover a place where you can belong, grow in your faith, and be part of something bigger.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a href="/events/" class="btn btn-gold btn-lg">See events</a>
+          <a href="/ministry-groups/" class="btn btn-outline-light btn-lg">Ministry groups</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -12,7 +12,8 @@ pages = [
     "about.html",
     "listen.html",
     "ministry-groups.html",
-    "events.html"
+    "events.html",
+    "contact.html"
 ]
 
 for page in pages:
