@@ -8,9 +8,20 @@
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav mx-lg-auto">
-        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item dropdown">
+        <li class="nav-item"><a class="nav-link {{ 'active' if active_page == 'index' }}"
+          aria-current="{{ 'page' if active_page == 'index' }}"
+          href="index.html">Home</a>
+        </li>
+        <li class="nav-item"><a class="nav-link {{'active' if active_page == 'about' }}"
+          aria-current="{{ 'page' if active_page == 'about' }}"
+          href="about.html">About</a>
+        </li>
+        <li class="nav-item"><a class="nav-link {{'active' if active_page == 'listen' }}"
+          aria-current="{{ 'page' if active_page == 'listen' }}"
+          href="listen.html">Listen</a>
+        </li>
+
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Messages</a>
           <div class="dropdown-menu p-4 glc-mega">
             <h2 class="h5 mb-2">New here? Let’s get you connected!</h2>
@@ -19,7 +30,7 @@
             <p class="small text-uppercase-none fw-semibold mb-1"><a href="/latest-sermons/" class="text-decoration-none">All sermons</a></p>
             <a class="dropdown-item px-0" href="/sermon/welcome-to-the-family-of-god/">Confidence In GOD</a>
           </div>
-        </li>
+        </li> -->
         <li class="nav-item"><a class="nav-link" href="/ministry-groups/">Ministry Groups</a></li>
         <li class="nav-item"><a class="nav-link" href="/events-2/">Events</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact-us/">Contact Us</a></li>

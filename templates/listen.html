@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% set active_page = "listen" %}
+
+{% block title %}Latest Sermons – Gospel Lighthouse Christian Fellowship Ajax{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HEADER -->
+<header class="hero text-white py-5" data-bs-theme="dark">
+  <div class="container position-relative">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-3">
+        <li class="breadcrumb-item"><a href="/" class="link-light link-underline-opacity-0">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Listen</li>
+      </ol>
+    </nav>
+    <h1 class="display-3 mb-0">Latest Sermons</h1>
+  </div>
+</header>
+
+<!-- SERMON LIST -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Sermon -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card sermon-card h-100">
+          <img src="https://glcfellowship.ca/wp-content/uploads/2025/03/58-posts-ministry-sermon-event-campaign-placeholder.webp" class="card-img-top" alt="" loading="lazy">
+          <div class="card-body">
+            <p class="small text-body-secondary mb-1"><time datetime="2026-01-25">January 25, 2026</time></p>
+            <h2 class="h5 card-title mb-2"><a href="/sermon/salt-and-light/" class="stretched-link">Salt and Light</a></h2>
+            <p class="small text-body-secondary mb-0">By GLCF Team</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Sermon -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card sermon-card h-100">
+          <img src="https://glcfellowship.ca/wp-content/uploads/2025/02/Screenshot-2025-04-10-at-6.25.00%20PM-768x430.png" class="card-img-top" alt="" loading="lazy">
+          <div class="card-body">
+            <p class="small text-body-secondary mb-1"><time datetime="2025-02-21">February 21, 2025</time></p>
+            <h2 class="h5 card-title mb-2"><a href="/sermon/the-believers-walk/" class="stretched-link">The Believers Walk</a></h2>
+            <p class="small text-body-secondary mb-0">By glcf</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Sermon -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card sermon-card h-100">
+          <img src="https://glcfellowship.ca/wp-content/uploads/2025/02/Screenshot-2025-04-10-at-6.27.10%20PM-768x428.png" class="card-img-top" alt="" loading="lazy">
+          <div class="card-body">
+            <p class="small text-body-secondary mb-1"><time datetime="2025-02-20">February 20, 2025</time></p>
+            <h2 class="h5 card-title mb-2"><a href="/sermon/welcome-to-the-family-of-god/" class="stretched-link">Confidence In GOD</a></h2>
+            <p class="small text-body-secondary mb-0">By glcf</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
