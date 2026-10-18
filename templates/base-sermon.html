@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% set active_page = "listen" %}
+
+{#
+  base-sermon.html — template for ONE sermon, reached from listen.html (/sermon/<slug>.html).
+
+  Expected context variable: `sermon` (dict/object). Fields:
+    title        (required)  "Salt and Light"
+    slug         (required)  "salt-and-light"
+    date         (required)  a date object OR an ISO string "2026-01-25"
+    date_display (optional)  "January 25, 2026" (falls back to `date`)
+    author       (optional)  "GLCF Team"
+    category     (optional)  "Topical"
+    image        (optional)  hero/cover image URL
+    audio_url    (optional)  direct mp3 link -> shows the audio player
+    video_url    (optional)  YouTube/Vimeo EMBED url -> shows a video player
+    scripture    (optional)  "Matthew 5:13-16"
+    summary      (optional)  short description (plain text)
+    body         (optional)  HTML notes / transcript (passed through |safe, so only trusted content)
+
+  Optional context variable: `related_sermons` — a list of the same shape as `sermon`.
+  The current sermon is skipped automatically.
+
+  The fallback below is the "Salt and Light" example so the page renders on its own.
+#}
+
+{% set sermon = sermon | default({
+  "title": "Salt and Light",
+  "slug": "salt-and-light",
+  "date": "2026-01-25",
+  "date_display": "January 25, 2026",
+  "author": "GLCF Team",
+  "category": "Topical",
+  "image": "https://glcfellowship.ca/wp-content/uploads/2025/02/58-open-sermon-event-campaign-placeholder.webp",
+  "audio_url": "",
+  "video_url": "",
+  "scripture": "",
+  "summary": "",
+  "body": ""
+}) %}
+
+{% set related_sermons = related_sermons | default([
+  {
+    "title": "The Believers Walk",
+    "slug": "the-believers-walk",
+    "date": "2025-02-21",
+    "date_display": "February 21, 2025",
+    "author": "glcf",
+    "image": "https://glcfellowship.ca/wp-content/uploads/2025/02/Screenshot-2025-04-10-at-6.25.00%20PM-768x430.png"
+  },
+  {
+    "title": "Confidence In GOD",
+    "slug": "welcome-to-the-family-of-god",
+    "date": "2025-02-20",
+    "date_display": "February 20, 2025",
+    "author": "glcf",
+    "image": "https://glcfellowship.ca/wp-content/uploads/2025/02/Screenshot-2025-04-10-at-6.27.10%20PM-768x428.png"
+  }
+]) %}
+
+{% block title %}{{ sermon.title }} – Gospel Lighthouse Christian Fellowship Ajax{% endblock %}
+
+
+{% block content %}
+
+<!-- SERMON HEADER -->
+<header class="hero text-white py-5" data-bs-theme="dark">
+  <div class="container position-relative">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-3">
+        <li class="breadcrumb-item"><a href="/" class="link-light link-underline-opacity-0">Home</a></li>
+        <li class="breadcrumb-item"><a href="/listen.html" class="link-light link-underline-opacity-0">Listen</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ sermon.title }}</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-lg-9">
+        {% if sermon.category %}
+        <span class="badge rounded-pill text-bg-warning mb-3">{{ sermon.category }}</span>
+        {% endif %}
+        <h1 class="display-3 mb-3">{{ sermon.title }}</h1>
+        <p class="lead mb-0">
+          {% if sermon.author %}By {{ sermon.author }}{% endif %}
+          {% if sermon.author and sermon.date %}<span class="mx-2 opacity-50" aria-hidden="true">|</span>{% endif %}
+          {% if sermon.date %}
+          <time datetime="{{ sermon.date }}">{{ sermon.date_display | default(sermon.date) }}</time>
+          {% endif %}
+          {% if sermon.scripture %}
+          <span class="mx-2 opacity-50" aria-hidden="true">|</span>{{ sermon.scripture }}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SERMON PLAYER + NOTES -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="row g-5 justify-content-center">
+
+      <div class="col-lg-8">
+        <article>
+
+          {% if sermon.video_url %}
+          <div class="ratio ratio-16x9 photo photo-lg mb-4">
+            <iframe src="{{ sermon.video_url }}" title="Video: {{ sermon.title }}"
+                    allow="accelerometer; encrypted-media; picture-in-picture; fullscreen"
+                    allowfullscreen loading="lazy"></iframe>
+          </div>
+          {% elif sermon.image %}
+          <div class="photo photo-lg mb-4">
+            <img src="{{ sermon.image }}" alt="" class="img-fluid d-block w-100">
+          </div>
+          {% endif %}
+
+          <!-- Audio -->
+          <div class="give-option mb-4">
+            <h2 class="h4 mb-3">Listen to the audio version</h2>
+            {% if sermon.audio_url %}
+            <audio controls preload="none" class="w-100">
+              <source src="{{ sermon.audio_url }}" type="audio/mpeg">
+              Your browser doesn’t support audio playback.
+              <a href="{{ sermon.audio_url }}">Download the audio</a>.
+            </audio>
+            <p class="small mt-2 mb-0"><a href="{{ sermon.audio_url }}" download>Download audio</a></p>
+            {% else %}
+            <p class="mb-0 text-body-secondary">The audio for this message isn’t available yet. Please check back soon.</p>
+            {% endif %}
+          </div>
+
+          {% if sermon.summary %}
+          <p class="lead">{{ sermon.summary }}</p>
+          {% endif %}
+
+          {% if sermon.body %}
+          <div class="sermon-body">{{ sermon.body | safe }}</div>
+          {% endif %}
+
+          <hr class="my-5">
+          <a href="listen.html" class="btn btn-outline-navy">Back to all sermons</a>
+        </article>
+      </div>
+
+      <!-- RELATED SERMONS -->
+      {% set others = related_sermons | rejectattr("slug", "equalto", sermon.slug) | list %}
+      {% if others %}
+      <aside class="col-lg-4" aria-labelledby="related-heading">
+        <h2 id="related-heading" class="h3 mb-3">Related sermons</h2>
+        <div class="d-flex flex-column gap-3">
+          {% for item in others[:3] %}
+          <article class="card sermon-card">
+            {% if item.image %}
+            <img src="{{ item.image }}" class="card-img-top" alt="" loading="lazy">
+            {% endif %}
+            <div class="card-body">
+              <p class="small text-body-secondary mb-1">
+                <time datetime="{{ item.date }}">{{ item.date_display | default(item.date) }}</time>
+              </p>
+              <h3 class="h5 card-title mb-2">
+                <a href="{{ item.slug }}.html" class="stretched-link">{{ item.title }}</a>
+              </h3>
+              {% if item.author %}<p class="small text-body-secondary mb-0">By {{ item.author }}</p>{% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </aside>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="section section-navy text-white text-center">
+  <div class="container">
+    <h2 class="mb-3">New here? Let’s get you connected!</h2>
+    <p class="lead mb-4">Join us on Sunday and be part of what God is doing at Gospel Lighthouse.</p>
+    <a href="contact.html" class="btn btn-gold btn-lg">Plan your visit</a>
+  </div>
+</section>
+
+{% endblock %}
