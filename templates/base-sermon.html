@@ -3,7 +3,7 @@
 {% set active_page = "listen" %}
 
 {#
-  base-sermon.html — template for ONE sermon, reached from listen.html (/sermon/<slug>.html).
+  base-sermon.html — template for ONE sermon, reached from listen.html (<slug>.html).
 
   Expected context variable: `sermon` (dict/object). Fields:
     title        (required)  "Salt and Light"
@@ -21,43 +21,11 @@
 
   Optional context variable: `related_sermons` — a list of the same shape as `sermon`.
   The current sermon is skipped automatically.
-
-  The fallback below is the "Salt and Light" example so the page renders on its own.
 #}
 
-{% set sermon = sermon | default({
-  "title": "Salt and Light",
-  "slug": "salt-and-light",
-  "date": "2026-01-25",
-  "date_display": "January 25, 2026",
-  "author": "GLCF Team",
-  "category": "Topical",
-  "image": "https://glcfellowship.ca/wp-content/uploads/2025/02/58-open-sermon-event-campaign-placeholder.webp",
-  "audio_url": "",
-  "video_url": "",
-  "scripture": "",
-  "summary": "",
-  "body": ""
-}) %}
+{% set sermon = sermon %}
 
-{% set related_sermons = related_sermons | default([
-  {
-    "title": "The Believers Walk",
-    "slug": "the-believers-walk",
-    "date": "2025-02-21",
-    "date_display": "February 21, 2025",
-    "author": "glcf",
-    "image": "https://glcfellowship.ca/wp-content/uploads/2025/02/Screenshot-2025-04-10-at-6.25.00%20PM-768x430.png"
-  },
-  {
-    "title": "Confidence In GOD",
-    "slug": "welcome-to-the-family-of-god",
-    "date": "2025-02-20",
-    "date_display": "February 20, 2025",
-    "author": "glcf",
-    "image": "https://glcfellowship.ca/wp-content/uploads/2025/02/Screenshot-2025-04-10-at-6.27.10%20PM-768x428.png"
-  }
-]) %}
+{% set related_sermons = related_sermons %}
 
 {% block title %}{{ sermon.title }} – Gospel Lighthouse Christian Fellowship Ajax{% endblock %}
 

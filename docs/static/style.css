@@ -54,10 +54,19 @@ h2, h3, h4 { color: var(--glc-navy); }
 /* Hero — a beam of light from the upper right */
 .hero {
   position: relative;
-  padding: 6rem 0;
-  background:
+  padding: 10rem 0 10rem;
+  /* background:
     radial-gradient(ellipse 60% 80% at 85% 0%, rgba(242,177,52,.35), transparent 65%),
-    linear-gradient(160deg, var(--glc-navy) 0%, var(--glc-navy-deep) 100%);
+    linear-gradient(160deg, var(--glc-navy) 0%, var(--glc-navy-deep) 100%); */
+  
+  background:
+        linear-gradient(
+            rgba(0,0,0,0.30) 0%,
+            rgba(0,0,0,0.50) 50%,
+            rgba(0,0,0,0.30) 100%
+        ),
+        url('./images/church.webp') center/cover no-repeat;
+
   overflow: hidden;
 }
 .hero h1 { color: #fff; }
