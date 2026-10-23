@@ -55,19 +55,24 @@ h2, h3, h4 { color: var(--glc-navy); }
 .hero {
   position: relative;
   padding: 10rem 0 10rem;
-  /* background:
+  background:
     radial-gradient(ellipse 60% 80% at 85% 0%, rgba(242,177,52,.35), transparent 65%),
-    linear-gradient(160deg, var(--glc-navy) 0%, var(--glc-navy-deep) 100%); */
-  
+    linear-gradient(160deg, var(--glc-navy) 0%, var(--glc-navy-deep) 100%);  
+  overflow: hidden;
+}
+.hero.home {
+  position: relative;
+  padding: 10rem 0 10rem;  
   background:
         linear-gradient(
-            rgba(0,0,0,0.30) 0%,
-            rgba(0,0,0,0.50) 50%,
-            rgba(0,0,0,0.30) 100%
+            rgba(0,0,0,0.50) 0%,
+            rgba(0,0,0,0.70) 50%,
+            rgba(0,0,0,0.50) 100%
         ),
-        url('./images/church.webp') center/cover no-repeat;
+        url('./images/church.webp') top/cover no-repeat;
 
   overflow: hidden;
+
 }
 .hero h1 { color: #fff; }
 .hero-place { font-family: "Fraunces", serif; font-size: 1.75rem; color: var(--glc-gold); }
@@ -87,6 +92,7 @@ h2, h3, h4 { color: var(--glc-navy); }
 .panel-photo { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .panel-photo .panel-body { padding: 2rem 2.5rem 2.5rem; }
 .photo-lg { border-radius: 1.5rem; box-shadow: 0 1rem 2.5rem rgba(20,33,61,.18); }
+.photo-pray img { object-fit: contain; }
 
 /* Sermon cards */
 .sermon-card { border: 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 .25rem 1rem rgba(20,33,61,.08); transition: transform .2s, box-shadow .2s; }
