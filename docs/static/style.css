@@ -65,9 +65,9 @@ h2, h3, h4 { color: var(--glc-navy); }
   padding: 10rem 0 10rem;  
   background:
         linear-gradient(
-            rgba(0,0,0,0.50) 0%,
-            rgba(0,0,0,0.70) 50%,
-            rgba(0,0,0,0.50) 100%
+            rgba(0,0,0,0.40) 0%,
+            rgba(0,0,0,0.60) 50%,
+            rgba(0,0,0,0.40) 100%
         ),
         url('./images/church.webp') top/cover no-repeat;
 
@@ -85,6 +85,15 @@ h2, h3, h4 { color: var(--glc-navy); }
 .section-navy { background: var(--glc-navy); }
 .panel { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 1.25rem; padding: 2.5rem; }
 .glow-icon { font-size: 2.5rem; color: var(--glc-gold); display: block; margin-bottom: .5rem; }
+.your-place {
+  background:
+        linear-gradient(
+            rgba(0,0,0,0.50) 0%,
+            rgba(0,0,0,0.70) 50%,
+            rgba(0,0,0,0.50) 100%
+        ),
+        url('./images/community.webp') top/cover no-repeat;
+}
 
 /* Photos */
 .photo { background: linear-gradient(135deg, var(--glc-gold), var(--glc-navy)); overflow: hidden; }
