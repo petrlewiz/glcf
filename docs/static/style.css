@@ -72,8 +72,48 @@ h2, h3, h4 { color: var(--glc-navy); }
         url('./images/church.webp') top/cover no-repeat;
 
   overflow: hidden;
-
 }
+
+.hero.about {
+  position: relative;
+  padding: 8rem 0 8rem;  
+  background:
+        linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+        url('./images/lighthouse.webp') center/cover no-repeat;
+
+  overflow: hidden;
+}
+
+.hero.ministry {
+  position: relative;
+  padding: 7rem 0 7rem;  
+  background:
+        linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+        url('./images/lighthouse.webp') center/cover no-repeat;
+
+  overflow: hidden;
+}
+
+.hero.events {
+  position: relative;
+  padding: 8rem 0 8rem;  
+  background:
+        linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+        url('./images/lighthouse.webp') center/cover no-repeat;
+
+  overflow: hidden;
+}
+
+.hero.contact {
+  position: relative;
+  padding: 7rem 0 7rem;  
+  background:
+        linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+        url('./images/lighthouse.webp') center/cover no-repeat;
+
+  overflow: hidden;
+}
+
 .hero h1 { color: #fff; }
 .hero-place { font-family: "Fraunces", serif; font-size: 1.75rem; color: var(--glc-gold); }
 .hero-logo img { max-height: 22rem; width: auto; }
